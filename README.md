@@ -189,7 +189,7 @@ networks:
 
 # 3. ⚖️ Load Balancing Test
 
-<iframe width="784" height="511" src="https://www.youtube.com/embed/zIxFwh1l9sU?si=esEpNyBz6JPm1alA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+> [🔗 Youtube Link](https://youtu.be/zIxFwh1l9sU?si=3PlfnwQGynnu5xYx)
 
 - 세 개의 WAS 컨테이너에 라운드 로빈으로 부하 분산이 되는 것을 확인
 
