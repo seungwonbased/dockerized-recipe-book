@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bootstrap.min.css') }}"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../static/icon.png" />
+    <title>한끼얼마</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <center>
+          <h1 class="title"><a href="/">한끼얼마</a></h1>
+        </center>
+        {% include "navbar.html" %}
+      </div>
+    </div>
+    <!-- 기본 템플릿 안에 삽입될 내용 시작 -->
+    {% block content %} {% endblock %}
+    <div id="footer">
+      ⓒ 2023. 2조 all rights reserved.<br />
+      <span id="footerlogo">
+        <p>한끼얼마</p>
+      </span>
+    </div>
+    <!-- 기본 템플릿 안에 삽입될 내용 끝 -->
+    <!-- Bootstrap JS --끝
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <!-- JS Start -->
+    {% block script %} {% endblock %}
+    <!-- JavaScript End -->
+  </body>
+</html>

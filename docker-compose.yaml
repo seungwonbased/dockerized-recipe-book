@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  recipe-book-postgres:
+    image: seungwonbae/recipe-book-postgres
+    container_name: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=password
+  recipe-book-was:
+    image: seungwonbae/recipe-book-was
+
