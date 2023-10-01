@@ -1,6 +1,6 @@
 # <span id='top'> 🐳 Dockerized 한끼얼마💰</span>
 
-# 1.  🥙  한끼얼마 💰
+# 1. 🥙 한끼얼마 💰
 
 ![main](https://github.com/seungwonbased/ssg-recipe-project/blob/main/main_page.png)
 
@@ -8,10 +8,12 @@
 
 # 2. 🐳 Dockerized 한끼얼마 아키텍처
 
-![archi](https://github.com/seungwonbased/dockerized-recipe-book/tree/main/assets/architecture.png)
+![archi](https://github.com/seungwonbased/dockerized-recipe-book/blob/main/assets/architecture.png)
 
 > [🐋 Docker Hub: seungwonbae](https://hub.docker.com/u/seungwonbae)
+
 ## 2.1. Images
+
 ### 2.1.1. seungwonbae/recipe-book-was
 
 ```dockerfile
@@ -52,7 +54,7 @@ gunicorn --bind 0.0.0.0:5000 --timeout 90 "app:create_app()"
 - 실행 시 app.sh 스크립트 실행
 - app.sh 스크립트를 통해 데이터베이스를 설정하고, WAS를 실행
 - 이전에 Lightsail에 배포했을 땐 Unix Socket을 통해 웹 서버와 통신했는데, 도커화 후에는 포트에 바인딩해 서비스
-	- Unix Socket은 같은 로컬 머신 안에서 빠르고 효울적으로 통신이 가능하지만, 본 프로젝트에서는 웹 서버와 WAS를 다른 컨테이너에 격리했기 때문에 포트로 서비스해야 함
+  - Unix Socket은 같은 로컬 머신 안에서 빠르고 효울적으로 통신이 가능하지만, 본 프로젝트에서는 웹 서버와 WAS를 다른 컨테이너에 격리했기 때문에 포트로 서비스해야 함
 
 ```python
 # docker.py
@@ -76,6 +78,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 ```
 
 - 위와 같은 애플리케이션의 config/docker.py를 작성해 Docker 환경에서 설정을 자동화
+
 ### 2.1.2. seungwonbae/recipe-book-postgres
 
 ```dockerfile
@@ -175,20 +178,21 @@ networks:
 ```
 
 - docker-compose 파일에 세 개의 서비스 등록
-	- DB: recipe-book-postgres
-	- WAS: recipe-book-was
-	- Web Server: recipe-book-ws
+  - DB: recipe-book-postgres
+  - WAS: recipe-book-was
+  - Web Server: recipe-book-ws
 - DB에 볼륨을 설정해 재시작하더라도 데이터가 유지됨
 - 웹 서버만 호스트와 포트를 매핑해 나머지는 백엔드에서 구동되도록 함
-	- 웹 서버를 통해서만 서비스 접근 가능
+  - 웹 서버를 통해서만 서비스 접근 가능
 - 웹 서버가 죽으면 다시 재시작하도록 설정
 - Compose default 네트워크를 사용해도 되지만, net 네트워크를 생성해 네트워크 구성을 명확하게 함
 
 # 3. ⚖️ Load Balancing Test
 
-<iframe width="1120" height="730" src="https://www.youtube.com/embed/zIxFwh1l9sU?si=esEpNyBz6JPm1alA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="784" height="511" src="https://www.youtube.com/embed/zIxFwh1l9sU?si=esEpNyBz6JPm1alA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 - 세 개의 WAS 컨테이너에 라운드 로빈으로 부하 분산이 되는 것을 확인
+
 # 4. 🔧 Issue & Troubleshooting
 
 > ✅: 해결 이슈 ❓: 미해결 이슈
