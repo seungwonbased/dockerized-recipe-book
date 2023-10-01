@@ -31,7 +31,6 @@ services:
     networks:
       - net
 volumes:
-  logs: {}
   postgres: {}
 networks:
   net:
