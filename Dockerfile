@@ -14,5 +14,7 @@ ENV FLASK_APP=app
 ENV FLASK_DEBUG=true
 ENV APP_CONFIG_FILE=/recipe-book/config/docker.py
 
-CMD [ "gunicorn", "--bind", "0:5000", "app:create_app()" ]
+RUN chmod +x app.sh
+
+CMD [ "./app.sh" ]
 # CMD [ "gunicorn", "--bind", "unix:/tmp/recipe-book.sock", "app:create_app()" ]
