@@ -51,6 +51,7 @@ gunicorn --bind 0.0.0.0:5000 --timeout 90 "app:create_app()"
 - Flask + Gunicorn (WSGI)로 구성된 웹 애플리케이션 서버
 - Ubuntu 20.04 베이스
 - 빌드 시 필요한 패키지와 의존 관계 설치
+- Gunicorn WSGI가 Flask 애플리케이션을 인식할 수 있도록 Dockerfile에 환경 변수를 삽입하고, Flask 애플리케이션에 도커 전용 Config 파일을 작성
 - 실행 시 app.sh 스크립트 실행
 - app.sh 스크립트를 통해 데이터베이스를 설정하고, WAS를 실행
 - 이전에 Lightsail에 배포했을 땐 Unix Socket을 통해 웹 서버와 통신했는데, 도커화 후에는 포트에 바인딩해 서비스
