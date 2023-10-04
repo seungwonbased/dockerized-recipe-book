@@ -8,7 +8,7 @@
 
 ## 2. 🐳 Dockerized 한끼얼마 아키텍처
 
-![archi](https://github.com/seungwonbased/dockerized-recipe-book/blob/main/assets/architecture.png)
+![archi](https://github.com/seungwonbased/dockerized-recipe-book/blob/main/assets/architecture1.png)
 
 > [🐋 Docker Hub: seungwonbae](https://hub.docker.com/u/seungwonbae)
 
